@@ -1,0 +1,14 @@
+# values.yaml
+# 이 파일은 Helm 차트의 기본 설정을 덮어씁니다.
+
+auth:
+  enabled: true
+  password: "Qhfhfh12#"  # 우리가 정한 비밀번호
+
+master:
+  persistence:
+    size: 2Gi  # 저장소 용량을 2기가로 확장
+
+commonLabels:
+  env: production
+  team: ai-infra
