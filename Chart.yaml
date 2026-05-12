@@ -1,8 +1,10 @@
-# Chart.yaml
 apiVersion: v2
-name: my-redis-service
+name: my-gitops-redis
+description: A Helm chart for Redis on GitOps
+type: application
 version: 1.0.0
+appVersion: "7.2.4"
 dependencies:
   - name: redis
-    version: 18.x.x
+    version: 18.19.4
     repository: https://charts.bitnami.com/bitnami
