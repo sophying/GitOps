@@ -1,23 +1,13 @@
-# values.yaml - 모든 곳의 persistence를 명시적으로 끕니다.
+# values.yaml
+auth:
+  enabled: true
+  password: "Qhfhfh12#"
 
-# 1. 마스터 노드 설정
 master:
-  count: 1
   persistence:
-  #    size: 2Gi  # 저장소 용량을 2기가로 확장
     enabled: false
 
-# 2. 복제 노드(Replica) 설정 - 사원님 에러가 여기서 나고 있습니다.
 replica:
   replicaCount: 1
   persistence:
     enabled: false
-
-# 3. 전역 설정 (혹시 모를 잔상 제거)
-global:
-  storageClass: ""
-  redis:
-    password: "Qhfhfh12#"
-
-commonLabels:
-  env: production
