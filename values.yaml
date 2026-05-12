@@ -5,10 +5,18 @@ auth:
   enabled: true
   password: "Qhfhfh12#"  # 우리가 정한 비밀번호
 
+#master:
+#  persistence:
+#    size: 2Gi  # 저장소 용량을 2기가로 확장
 master:
   persistence:
-    size: 2Gi  # 저장소 용량을 2기가로 확장
-
+    enabled: false # <--- 실습 환경에 StorageClass가 없으므로 우선 꺼줍니다.
+  
+replica:
+  replicaCount: 1 # 리소스 절약을 위해 1개로 조정
+  persistence:
+    enabled: false # <--- 리플리카도 꺼줍니다.
+    
 commonLabels:
   env: production
   team: ai-infra
